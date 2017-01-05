@@ -3,6 +3,8 @@ var url = require('./url.js');
 
 var tests = [
     ["", ""],
+    ["?", "?"],
+    ["#", "#"],
     ["https://google.com", "https://google.com"],
     ["https://example.com/", "https://example.com"],
     ["https://example.com//", "https://example.com/"],
