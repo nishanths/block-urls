@@ -17,8 +17,8 @@ var saveOptions = () => {
     var lines = str.split(/\r?\n/)
         .filter(str => str.length > 0)
         .map(str => {
-            if (str[str.length-1] === "/" ||            // Ends in slash.
-                str.indexOf("?") === -1 ||              // No query string.
+            if (str[str.length-1] === "/" &&            // Ends in slash.
+                str.indexOf("?") === -1 &&              // No query string.
                 str.indexOf("#") === -1) {              // No fragment.
                 return str.substring(0, str.length-1);  // Remove ending slash.
             }

@@ -1,4 +1,6 @@
-chrome.webNavigation.onBeforeNavigate.addListener((info) => {
+// onCommitted blocks on redirects also, and is better than
+// onBeforeNavigate for our purpose.
+chrome.webNavigation.onCommitted.addListener((info) => {
     var u = info.url;
     if (u && u.length > 0 &&
             u[u.length-1] === "/" &&    // Ends in slash.

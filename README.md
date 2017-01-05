@@ -18,13 +18,13 @@ To uninstall, click the trash icon.
 
   ```
   https://github.com/nishanths
-  https://facebook.com
-  https://example.com?q=foo
+  https://www.facebook.com
+  https://example.com?q=onlythisquery
   ```
   
   Only exact URL matches will be blocked. The query string and fragment, if specified, will also need to match for blocking. 
   
-  The only exception is that trailing slash does not matter if both query string and fragment are absent. That is, `https://facebook.com` will block both `https://facebook.com` and `https://facebook.com/`.
+  The only exception is that trailing slash does not matter if both query string and fragment are absent. Thus, `https://www.facebook.com` will block both `https://www.facebook.com` and `https://www.facebook.com/`, but no other `facebook.com` URL.
   
 4. Hit Save to save changes.
   
