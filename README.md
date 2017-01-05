@@ -6,8 +6,8 @@ Firefox addon to block URLs.
 
 ## Install
 
-1. [Download the latest version](https://raw.githubusercontent.com/nishanths/block-urls/master/web-ext-artifacts/block_urls-2.1-an+fx.xpi).
-1. Drag and drop the downloaded file into Firefox.
+1. [Download the latest version](https://raw.githubusercontent.com/nishanths/block-urls/master/web-ext-artifacts/block_urls-3.0-an+fx.xpi).
+1. Open a new tab, then drag and drop the downloaded file into Firefox.
 
 ## Configuring URLs
 
@@ -27,14 +27,24 @@ Firefox addon to block URLs.
 
 Only exact URL matches will be blocked. The query string and fragment, if
 specified, will also need to match for blocking. The only exception is that
-trailing slash does not matter if both query string and fragment are absent.
+trailing slash in the path does not matter.
 
-Thus, specifying `https://www.facebook.com` will block both
-`https://www.facebook.com` and `https://www.facebook.com/`, but no other
-`facebook.com` URL.
+```
+Specified                            Blocks
+---------                            ------
 
-Further reading about [the parts of a
-URL](https://www.mattcutts.com/blog/seo-glossary-url-definitions/).
+https://www.facebook.com             https://www.facebook.com
+                                     https://www.facebook.com/
+                                     
+https://www.facebook.com/            https://www.facebook.com
+                                     https://www.facebook.com/
+                                     
+https://www.facebook.com?q=foo       https://www.facebook.com?q=foo
+                                     https://www.facebook.com/?q=foo
+
+```
+
+Further reading about [the parts of a URL](https://www.mattcutts.com/blog/seo-glossary-url-definitions/).
   
 ## Disable
 

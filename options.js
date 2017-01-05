@@ -16,14 +16,7 @@ var saveOptions = () => {
     var str = document.querySelector("#urls").value;
     var lines = str.split(/\r?\n/)
         .filter(str => str.length > 0)
-        .map(str => {
-            if (str[str.length-1] === "/" &&            // Ends in slash.
-                str.indexOf("?") === -1 &&              // No query string.
-                str.indexOf("#") === -1) {              // No fragment.
-                return str.substring(0, str.length-1);  // Remove ending slash.
-            }
-            return str;
-        });
+        .map(normalizeSlash);
     
     var urls = Object.create(null);
     lines.forEach((s) => {

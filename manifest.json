@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Block URLs",
-    "version": "2.1",
+    "version": "3.0",
     "description": "This extension blocks you from viewing specified URLs",
     "options_ui": {
         "page": "options.html"
@@ -13,7 +13,7 @@
         }
     },
     "background": {
-        "scripts": ["nav.js"]
+        "page": "background.html"
     },
     "homepage_url": "https://github.com/nishanths/block-urls",
     "permissions": [

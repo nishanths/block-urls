@@ -6,13 +6,7 @@ var storage = browser.storage.sync || browser.storage.local;
 // The user enters https://facebook.com/profile, which Facebook redirects this
 // to https://www.facebook.com/profile.
 browser.webNavigation.onCommitted.addListener((info) => {
-    var u = info.url;
-    if (u.length > 0 &&
-            u[u.length-1] === "/" &&    // Ends in slash.
-            u.indexOf("?") === -1 &&    // No query string.
-            u.indexOf("#") === -1) {    // No fragment.
-        u = u.substring(0, u.length-1); // Remove the ending slash.
-    }
+    var u = normalizeSlash(info.url);
 
     storage.get({"urls": Object.create(null)}).then((items) => {
         if (!items.urls[u]) {
