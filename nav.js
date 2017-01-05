@@ -17,6 +17,8 @@ chrome.webNavigation.onCommitted.addListener((info) => {
         if (!items.urls[u]) {
             return;
         }
-        chrome.tabs.update(info.tabId, { url: "blocked.html?from="+encodeURIComponent(info.url) });
+        var params = new URLSearchParams();
+        params.set("from", info.url);
+        chrome.tabs.update(info.tabId, { url: "blocked.html?"+params.toString() });
     });
 }, { urls: ["<all_urls>"] });
