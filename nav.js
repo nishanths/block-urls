@@ -1,12 +1,11 @@
 var storage = browser.storage.sync || browser.storage.local;
 
-// Chrome: onCommitted blocks on redirects, but onBeforeNavigate doesn't.
-// Firefox: onBeforeNavigate blocks on redirects.
+// onCommitted blocks on redirects, but onBeforeNavigate doesn't.
 // 
 // That is, https://www.facebook.com/profile is specified to be blocked in preferences. 
 // The user enters https://facebook.com/profile, which Facebook redirects this
 // to https://www.facebook.com/profile.
-browser.webNavigation.onBeforeNavigate.addListener((info) => {
+browser.webNavigation.onCommitted.addListener((info) => {
     var u = info.url;
     if (u.length > 0 &&
             u[u.length-1] === "/" &&    // Ends in slash.

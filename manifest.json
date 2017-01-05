@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Block URLs",
-    "version": "2.0",
+    "version": "2.1",
     "description": "This extension blocks you from viewing specified URLs",
     "options_ui": {
         "page": "options.html"

@@ -6,9 +6,8 @@ Firefox addon to block URLs.
 
 ## Install
 
-1. [Download the latest version](https://raw.githubusercontent.com/nishanths/block-urls/master/web-ext-artifacts/block_urls-2.0-an+fx.xpi).
-2. Visit `about:addons`.
-3. Drag and drop the downloaded file into the window.
+1. [Download the latest version](https://raw.githubusercontent.com/nishanths/block-urls/master/web-ext-artifacts/block_urls-2.1-an+fx.xpi).
+1. Drag and drop the downloaded file into Firefox.
 
 ## Configuring URLs
 
