@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>URLs - Block Site Options</title>
-    <style>
-    </style>
+    <title>Block URLs Options</title>
 </head>
 <body>
-    <textarea placeholder="URLs to block, one per line." rows="22" cols="70"></textarea>
-    <button id="save">Save</button>
+    <textarea id="urls" placeholder="URLs to block, one per line.
+Trailing slashes do not matter if query string and fragment are absent" rows="22" cols="70"></textarea>
     <script src="options.js"></script>
+    <button id="save">Save</button>
+    <span id="status"></span>
 </body>
 </html>

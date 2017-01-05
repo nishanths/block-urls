@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blocked URL</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 100%;
+        }
+        footer {
+            margin-top: 25vh;
+        }
+        a {
+            color: blue;
+        }
+        a.no-decorate {
+            text-decoration: none;
+            color: initial;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>You've blocked the URL <span id="blocked-url"></span></p>
+    <section>
+    <footer>
+        <p>Still want to visit the page?</p>
+        <p>
+            Visit chrome://extensions. Then either:
+            <ul>
+                <li>edit the options for the Block URLs extension, or</li>
+                <li>remove the Block URLs extension</li>
+            </ul>
+        </p>
+    </footer>
+    <script src="blocked.js"></script>
+</body>
+</html>

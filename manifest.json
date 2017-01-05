@@ -1,15 +1,20 @@
 {
     "manifest_version": 2,
-
-    "name": "Block Site",
-    "description": "This extension blocks you from viewing specified URLs",
+    "name": "Block URLs",
     "version": "1.0",
+    "description": "This extension blocks you from viewing specified URLs",
     "options_ui": {
         "page": "options.html",
         "chrome_style": true
     },
+    "background": {
+        "scripts": ["nav.js"]
+    },
+    "homepage_url": "https://github.com/nishanths/block-urls",
     "permissions": [
-        "activeTab",
-        "https://ajax.googleapis.com/"
+        "webNavigation",
+        "tabs",
+        "storage",
+        "<all_urls>"
     ]
 }
