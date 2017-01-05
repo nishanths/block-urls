@@ -1,11 +1,16 @@
 {
     "manifest_version": 2,
     "name": "Block URLs",
-    "version": "1.0",
+    "version": "2.0",
     "description": "This extension blocks you from viewing specified URLs",
     "options_ui": {
-        "page": "options.html",
-        "chrome_style": true
+        "page": "options.html"
+    },
+    "author": "Nishanth Shanmugham",
+    "gecko": {
+        "application": {
+            "id": "nishanth.gerrard@gmail.com"
+        }
     },
     "background": {
         "scripts": ["nav.js"]

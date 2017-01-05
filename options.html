@@ -2,10 +2,15 @@
 <html>
 <head>
     <title>Block URLs Options</title>
+    <style>
+        textarea {
+            display: block;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <textarea id="urls" placeholder="URLs to block, one per line.
-Trailing slashes do not matter if both query string and fragment are absent." rows="22" cols="70"></textarea>
+    <textarea id="urls" placeholder="URLs to block, one per line." rows="22" cols="70"></textarea>
     <script src="options.js"></script>
     <button id="save">Save</button>
     <span id="status"></span>

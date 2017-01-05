@@ -1,19 +1,19 @@
 # Block URLs
 
-Chrome extension to block URLs. 
+Firefox addon to block URLs. 
 
-<img src="http://i.imgur.com/eDO90jt.png" width=450>
+<img src="http://i.imgur.com/4HSPVSb.png" width=450>
 
 ## Install
 
-1. [Download the latest version](https://github.com/nishanths/block-urls/releases/download/1.0/block-urls.crx).
-2. Visit `chrome://extensions`.
+1. [Download the latest version](https://raw.githubusercontent.com/nishanths/block-urls/master/web-ext-artifacts/block_urls-2.0-an+fx.xpi).
+2. Visit `about:addons`.
 3. Drag and drop the downloaded file into the window.
 
-## Options
+## Configuring URLs
 
-1. Visit `chrome://extensions`.
-2. Click on Options under Block URLs.
+1. Visit `about:addons`.
+2. Click on Preferences under Block URLs.
 3. Specify the URLs to block, one per line. For example:
 
   ```
@@ -22,7 +22,7 @@ Chrome extension to block URLs.
   https://example.com?q=onlythisquery
   ```
   
-4. Hit Save to save changes. Settings will be synchronized across your Chrome sign-ins.
+4. Hit the Save button.
   
 ## URL matching rules
 
@@ -41,7 +41,7 @@ URL](https://www.mattcutts.com/blog/seo-glossary-url-definitions/).
 
 To disable blocking, either:
 
-* Remove the URL from the options and hit Save 
+* Remove the URL from Preferences and hit Save 
 * Remove or disable the extension
   
 ## License

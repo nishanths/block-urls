@@ -1,24 +1,28 @@
-// onCommitted blocks on redirects also, and is better than
-// onBeforeNavigate for our purpose.
-chrome.webNavigation.onCommitted.addListener((info) => {
+var storage = browser.storage.sync || browser.storage.local;
+
+// Chrome: onCommitted blocks on redirects, but onBeforeNavigate doesn't.
+// Firefox: onBeforeNavigate blocks on redirects.
+// 
+// That is, https://www.facebook.com/profile is specified to be blocked in preferences. 
+// The user enters https://facebook.com/profile, which Facebook redirects this
+// to https://www.facebook.com/profile.
+browser.webNavigation.onBeforeNavigate.addListener((info) => {
     var u = info.url;
-    if (u && u.length > 0 &&
+    if (u.length > 0 &&
             u[u.length-1] === "/" &&    // Ends in slash.
             u.indexOf("?") === -1 &&    // No query string.
             u.indexOf("#") === -1) {    // No fragment.
         u = u.substring(0, u.length-1); // Remove the ending slash.
     }
 
-    chrome.storage.sync.get({"urls": Object.create(null)}, (items) => {
-        if (chrome.runtime.lastError) {
-            console.error(chrome.runtime.lastError);
-            return;
-        }
+    storage.get({"urls": Object.create(null)}).then((items) => {
         if (!items.urls[u]) {
             return;
         }
         var params = new URLSearchParams();
         params.set("from", info.url);
-        chrome.tabs.update(info.tabId, { url: "blocked.html?"+params.toString() });
+        browser.tabs.update(info.tabId, { url: "blocked.html?"+params.toString() });
+    }, (err) => {
+        console.error(err);
     });
-}, { urls: ["<all_urls>"] });
+});

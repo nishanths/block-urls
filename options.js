@@ -1,14 +1,14 @@
+var storage = browser.storage.sync || browser.storage.local;
+
 var message = (s) => {
     document.querySelector("#status").textContent = s;
 };
 
 var restoreOptions = () => {
-    chrome.storage.sync.get({"original": ""}, function(items) {
-        if (chrome.runtime.lastError) {
-            message(chrome.runtime.lastError);
-            return;
-        }
+    storage.get({"original": ""}).then((items) => {
         document.querySelector("#urls").value = items.original;
+    }, (err) => {
+        message(err);
     });
 };
 
@@ -32,15 +32,12 @@ var saveOptions = () => {
 
     // Store the URLs as a map (for future lookup), 
     // and the original string content (for re-displaying).
-    chrome.storage.sync.set({"urls": urls, "original": str}, function() {
-        if (chrome.runtime.lastError) {
-            message(chrome.runtime.lastError);
-            return;
-        }
+    storage.set({"urls": urls, "original": str}).then(() => {
         message("URLs saved");
-        setTimeout(() => {
-            message("");
-        }, 1000);
+        setTimeout(() => { message("") }, 1000);
+    }, (err) => {
+        message(err);
+        console.error(err);
     });
 };
 
