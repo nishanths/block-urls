@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+
+    "name": "Block Site",
+    "description": "This extension blocks you from viewing specified URLs",
+    "version": "1.0",
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
+    },
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/"
+    ]
+}
