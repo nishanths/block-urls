@@ -27,7 +27,7 @@ Firefox addon to block URLs.
 
 Only exact URL matches will be blocked. The query string and fragment, if
 specified, will also need to match for blocking. The only exception is that
-trailing slash in the path does not matter.
+leading slash in the path does not matter.
 
 ```
 Specified                            Blocks
